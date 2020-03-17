@@ -73,10 +73,3 @@ def hello(event, context):
 python3 -m pip install --user virtualenv
 python3 -m venv env
 source env/bin/activate
-
-aws codepipeline list-webhooks --endpoint-url "https://codepipeline.us-east-1.amazonaws.com" --region "us-east-1"
-aws codepipeline deregister-webhook-with-third-party --webhook-name <webhook-name>
-aws codepipeline delete-webhook --name <webhook-name>
-aws codepipeline start-pipeline-execution --name hackaton-cicd-deploy
-
-aws ecr describe-images --output json --repository-name nginx-hackaton-img --query 'sort_by(imageDetails,& imagePushedAt)[-1].imageTags[0]' -output=text
