@@ -27,12 +27,12 @@ functions:
   hello:
     handler: handler.hello
     environment:
-      GROUP: rafabarbosa
+      GROUP: B3Z
     layers:
       - {Ref: SlackLambdaLayer}
     events:
       - s3:
-         bucket: codepipeline-us-east-1-483417879513
+         bucket: codepipeline-us-east-1-786052475767
          event: s3:ObjectCreated:*
          rules:
             - prefix: hackathon-CI-app/BuildArtif
